@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>your Cart</h1>
+    <div class="row mt-5" id="movies">
+        
+    </div>
+</body>
+<script>
+con=document.getElementById('movies')
+favmovie= JSON.parse(localStorage.getItem('addfavmovie'))||[]
+
+favmovie.forEach((e)=>{
+    var div1= document.createElement('div');
+            div1.setAttribute('id','imgcon');
+
+         var img1=document.createElement('img')
+            img1.src=e.Poster;
+
+         var btnfav=document.createElement('button');
+         btnfav.innerText='delete';
+       
+
+         div1.append(img1,btnfav)
+
+         con.append(div1)
+
+
+
+})
+
+
+</script>
+</html>
